@@ -2,7 +2,7 @@
 
 An SKSE plugin and script layer for [Skills of the Wild](https://www.nexusmods.com/skyrimspecialedition/mods/37693) by JaySerpa (needs the original mod). Part of the 2026 series with Campfire 2026, Frostfall 2026, Last Seed 2026 and Simple Hunting Overhaul 2026.
 
-Status: pre-release, in testing. Licence: MIT (see `LICENSE.txt`).
+Status: tested in game (Skyrim SE 1.7.104, normal and ESL Campfire builds). Licence: MIT (see `LICENSE.txt`).
 
 Layout: `plugin/` the SKSE plugin (C++, CommonLibSSE-NG), `src/scripts/` the three rebuilt scripts and `SOTW2026.psc`, `tools/` the Papyrus build and the packaging scripts, `docs/README.txt` the user documentation shipped with the mod.
 
