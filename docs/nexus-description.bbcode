@@ -1,0 +1,58 @@
+[size=5][b]Skills of the Wild 2026[/b][/size]
+[i]An SKSE plugin and script layer for Skills of the Wild by JaySerpa.[/i]
+
+[b]Needs the original Skills of the Wild[/b] (and what it requires: Campfire, Simple Hunting Overhaul, Dynamic Activation Key). This is not a replacement and contains none of the original mod's meshes, textures, sounds or plugin.
+
+[size=4][b]Part of a larger project[/b][/size]
+Skills of the Wild 2026 is one piece of a set of updates for Skyrim's survival and outdoor mods, built the same way (SKSE plugins, SKSE Menu Framework settings, optional ESL builds) and made to work together:
+[list]
+[*][url=https://www.nexusmods.com/skyrimspecialedition/mods/193929]Campfire 2026[/url]
+[*][url=https://www.nexusmods.com/skyrimspecialedition/mods/193732]Frostfall 2026[/url] and [url=https://www.nexusmods.com/skyrimspecialedition/mods/196457]Frostfall Seasons 2026[/url]
+[*][url=https://www.nexusmods.com/skyrimspecialedition/mods/193833]Last Seed 2026[/url]
+[*][url=https://www.nexusmods.com/skyrimspecialedition/mods/193973]Gourmet - AutoPatch[/url]
+[*][url=https://www.nexusmods.com/skyrimspecialedition/mods/196598]Valhalla A Combat Survival Accord (VaCSA)[/url]
+[*]Simple Hunting Overhaul 2026 - [b]TBA[/b], waiting on permissions
+[*]Hunterborn 2026 - [b]TBA[/b]
+[/list]
+
+[size=4][b]What it does[/b][/size]
+The three experience trees (Culinary Arts, Art of the Hunt, Wayfarer) are now run by an SKSE plugin on the game's own events, instead of scripts that looked at the world only when you sat down. It writes the same global variables the scripts did, so saves, the Campfire skill menu and other mods' patches see no difference.
+
+[list]
+[*][b]Cooking[/b] is recognised at ANY cooking station: the vanilla pot, the Hearthfires oven, and any furniture with a cooking keyword (campfire pots, kitchens, Gourmet and Last Seed stations). Meals earn experience the moment they are cooked. No more sit-down trick that could get stuck and duplicate items.
+[*][b]Hunting[/b]: kills count when you make them, and every skinning counts when you do it. Simple Hunting Overhaul stops counting its own hunting experience at 100, so the old tree stopped growing there; now every skinning still earns experience.
+[*][b]Wayfarer[/b]: days and discovered places count when they happen, not at the next sit-down. Books count for the first tree whose reading list holds them, once each.
+[*][b]Compass[/b]: the compass and the sneak eye stay hidden until the Wayfarer perks that unlock them, as before, but a mod that draws its own compass (Compass Navigation Overhaul) can be left alone. This replaces the "Re-enable Compass" patch: remove that patch.
+[*][b]Settings[/b] in SKSE Menu Framework 3 (no SkyUI or MCM needed): experience rates for each tree, per kill, skinning, day and place; the compass rule; the compass cheat and default jump height, which used to be console-only; and the synergies below.
+[/list]
+
+[size=4][b]Works with the rest of the 2026 series[/b][/size]
+Each link switches itself on when its partner is installed and running, and has its own switch on the Synergies page.
+[list]
+[*][b]Last Seed[/b]: the Culinary perk Healthy Diet makes a meal fill you more, by a share of the meal's own relief of hunger per rank.
+[*][b]Frostfall[/b]: a hot dish (stew, soup, chowder, broth, pie) takes some of the cold out of you; hours spent outdoors while Frostfall has you cold earn Wayfarer experience.
+[*][b]Simple Hunting Overhaul[/b]: every Art of the Hunt point you earn also raises your hunting experience, so skinning gets faster.
+[*][b]Campfire 2026, Gourmet[/b]: nothing to set. Their stations and foods are recognised and earn Culinary Arts experience like any other.
+[/list]
+
+[size=4][b]Installing[/b][/size]
+Use the FOMOD installer. It asks which DLL you need ("new" for Skyrim 1.6.1170 and newer, "older" for Skyrim VR and 1.6.1130 and older) and whether you use the normal Campfire or Campfire 2026 ESL. Install it below the original Skills of the Wild in your mod manager so the three rebuilt scripts win. The plugin itself has no .esp. It is safe to add or remove in the middle of a save: only the original globals are changed.
+
+[b]Campfire 2026 ESL users:[/b] choose the ESL option. It brings a copy of SkillsOfTheWild.esp whose Campfire references use the new numbers. With the normal Campfire do [b]not[/b] use it.
+
+[size=4][b]Requirements[/b][/size]
+[list]
+[*]Skills of the Wild (37693) and its requirements
+[*]SKSE and Address Library
+[*]SKSE Menu Framework 3
+[*]Remove "Skills of the Wild - Re-enable Compass"
+[/list]
+
+[size=4][b]Tested[/b][/size]
+Skyrim SE 1.7.104 with Campfire 2026 (normal and ESL), Frostfall 2026, Last Seed 2026 and Simple Hunting Overhaul: cooking at several stations, kills, skinning, books, days, places, the Frostfall hot meal and cold-hour experience, the Last Seed relief, and perk points. Beast Handler (taming, riding, pets) is untouched and still run by the mod's own scripts.
+
+[size=4][b]Troubleshooting[/b][/size]
+The Overview page and [i]Documents/My Games/Skyrim Special Edition/SKSE/SkillsOfTheWild.log[/i] say what the plugin found and every change to your points. Without the three rebuilt scripts the plugin does nothing, so nothing is counted twice.
+
+[size=4][b]Credits[/b][/size]
+Skills of the Wild by JaySerpa. The plugin, the settings pages and the script changes are by CageTV. Source: https://github.com/CageTV/Skills-of-the-Wild-2026
