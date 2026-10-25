@@ -454,6 +454,23 @@ namespace Skills
 		}
 		auto& d = State::D();
 
+		// Diagnostics: every change of a tree's points to spend is logged, with what has been earned, so a purchase that leaves a tree below
+		// zero can be told from the plugin's own awards (each award is logged on its own line).
+		{
+			static float last[3] = { -1000.0f, -1000.0f, -1000.0f };
+			const auto&  g = F();
+			const struct { const char* name; const RE::TESGlobal* pts; const RE::TESGlobal* earned; } trees[3] = {
+				{ "Culinary Arts", g.cookPoints, g.cookEarned }, { "Art of the Hunt", g.huntPoints, g.huntEarned }, { "Wayfarer", g.wayPoints, g.wayEarned }
+			};
+			for (int i = 0; i < 3; ++i) {
+				const float now = Val(trees[i].pts);
+				if (last[i] > -999.0f && now != last[i]) {
+					SKSE::log::info("{}: points to spend {:.0f} -> {:.0f} (earned {:.0f})", trees[i].name, last[i], now, Val(trees[i].earned));
+				}
+				last[i] = now;
+			}
+		}
+
 		// days: the Wayfarer tree
 		if (auto* cal = RE::Calendar::GetSingleton()) {
 			const int today = static_cast<int>(std::floor(cal->GetDaysPassed()));
