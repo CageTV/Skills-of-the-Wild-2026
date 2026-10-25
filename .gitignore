@@ -7,3 +7,4 @@ package/
 *.pdb
 *.zip
 __pycache__/
+plugin/build-done.txt
