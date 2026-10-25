@@ -60,5 +60,6 @@ The installer asks which SkillsOfTheWild.dll: "new" for Skyrim 1.6.1170 and newe
 
 CREDITS AND LICENSE
 -------------------
-Skills of the Wild by JaySerpa. The plugin, the settings pages and the script changes are by CageTV, MIT licensed (see LICENSE.txt); the plugin
+Skills of the Wild by JaySerpa. The plugin, the settings pages and the script changes are by CageTV, MIT licensed; the "new" SkillsOfTheWild.dll links CommonLibSSE-NG by alandtse and is, as a whole,
+under GPL-3.0-or-later (full text, source link and the notices of the bundled libraries in LICENSE.txt); the plugin
 contains none of the original mod's meshes, textures, sounds or plugin. The three scripts are rebuilt from JaySerpa's sources.

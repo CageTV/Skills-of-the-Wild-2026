@@ -2,7 +2,7 @@
 
 An SKSE plugin and script layer for [Skills of the Wild](https://www.nexusmods.com/skyrimspecialedition/mods/37693) by JaySerpa (needs the original mod). Part of the 2026 series with Campfire 2026, Frostfall 2026, Last Seed 2026 and Simple Hunting Overhaul 2026.
 
-Status: tested in game (Skyrim SE 1.7.104, normal and ESL Campfire builds). Licence: MIT (see `LICENSE.txt`).
+Status: tested in game (Skyrim SE 1.7.104, normal and ESL Campfire builds). Licence: MIT; the "new" DLL as a whole is GPL-3.0-or-later (see `LICENSE.txt`).
 
 Layout: `plugin/` the SKSE plugin (C++, CommonLibSSE-NG), `src/scripts/` the three rebuilt scripts and `SOTW2026.psc`, `tools/` the Papyrus build and the packaging scripts, `docs/README.txt` the user documentation shipped with the mod.
 
@@ -70,5 +70,6 @@ The installer asks which SkillsOfTheWild.dll: "new" for Skyrim 1.6.1170 and newe
 
 CREDITS AND LICENSE
 -------------------
-Skills of the Wild by JaySerpa. The plugin, the settings pages and the script changes are by CageTV, MIT licensed (see LICENSE.txt); the plugin
+Skills of the Wild by JaySerpa. The plugin, the settings pages and the script changes are by CageTV, MIT licensed; the "new" SkillsOfTheWild.dll links CommonLibSSE-NG by alandtse and is, as a whole,
+under GPL-3.0-or-later (full text, source link and the notices of the bundled libraries in LICENSE.txt); the plugin
 contains none of the original mod's meshes, textures, sounds or plugin. The three scripts are rebuilt from JaySerpa's sources.
