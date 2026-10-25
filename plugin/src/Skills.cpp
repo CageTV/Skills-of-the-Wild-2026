@@ -439,6 +439,17 @@ namespace Skills
 		atStation = false;
 		pendingBonus.clear();
 		if (auto* p = Game::Player(); p && Game::Ready()) {
+			// A tree's points to spend cannot be below zero: a save that overspent them (perks bought with nothing to spend) starts again at zero.
+			{
+				const auto& g = F();
+				const struct { const char* name; RE::TESGlobal* pts; } trees[3] = { { "Culinary Arts", g.cookPoints }, { "Art of the Hunt", g.huntPoints }, { "Wayfarer", g.wayPoints } };
+				for (const auto& t : trees) {
+					if (const float v = Val(t.pts); v < 0.0f) {
+						Game::Set(t.pts, 0.0f);
+						SKSE::log::info("{}: points to spend were {:.0f} (more perks bought than points earned); set to 0", t.name, v);
+					}
+				}
+			}
 			GivePerk(p, F().perkThings);
 			GivePerk(p, F().perkMortar);
 			if (F().spellSitting && !p->HasSpell(F().spellSitting)) {
