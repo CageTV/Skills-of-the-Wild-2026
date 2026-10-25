@@ -141,8 +141,25 @@ namespace Menu
 			ProgressBar(std::clamp(a_s.progress, 0.0f, 1.0f), ImVec2(-1.0f, 0.0f));
 		}
 
+		constexpr const char* kLogoPath = "Data\\Interface\\sotw2026\\sotw2026_logo.png";
+		constexpr float       kLogoAspect = 432.0f / 1024.0f;
+
+		void Logo()
+		{
+			static ImTextureID tex = SKSEMenuFramework::LoadTexture(kLogoPath);
+			if (!tex) {
+				return;
+			}
+			const float avail = GetContentRegionAvail().x;
+			const float w = std::min(avail, 520.0f);
+			SetCursorPosX(GetCursorPosX() + (avail - w) * 0.5f);
+			Image(tex, ImVec2(w, w * kLogoAspect));
+			Spacing();
+		}
+
 		void __stdcall RenderOverview()
 		{
+			Logo();
 			if (!Game::Ready()) {
 				TextColored(ImVec4(1.0f, 0.45f, 0.4f, 1.0f), "Skills of the Wild 2026 is not active.");
 				Spacing();

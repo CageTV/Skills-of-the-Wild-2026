@@ -107,7 +107,7 @@ SKSEPluginLoad(const SKSE::LoadInterface* a_skse)
 {
 	SKSE::Init(a_skse);
 	SetupLog();
-	SKSE::log::info("SkillsOfTheWild.dll 1.0.0, game {}", REL::Module::get().version().string());
+	SKSE::log::info("SkillsOfTheWild.dll 1.0.1, game {}", REL::Module::get().version().string());
 	State::Register();
 	SKSE::GetPapyrusInterface()->Register(RegisterPapyrus);
 	SKSE::GetMessagingInterface()->RegisterListener(OnMessage);

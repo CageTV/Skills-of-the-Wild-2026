@@ -31,11 +31,17 @@ def put(src, dst):
     shutil.copyfile(src, dst)
 
 
+LOGO = os.path.join("Interface", "sotw2026", "sotw2026_logo.png")   # shown on the Overview page of the SKSE Menu Framework section
+assert os.path.exists(os.path.join(HERE, "assets", LOGO)), "missing assets/" + LOGO
+
+
 def scripts_into(root):
+    """The files every install gets: the script layer and the menu logo."""
     for n in PEX:
         put(os.path.join(SCRIPTS, n), os.path.join(root, "scripts", n))
     for n in PSC:
         put(os.path.join(HERE, "src", "scripts", n), os.path.join(root, "scripts", "source", n))
+    put(os.path.join(HERE, "assets", LOGO), os.path.join(root, LOGO))
 
 
 # ---- the quick layer --------------------------------------------------------------------------------------------------------------
